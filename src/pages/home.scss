@@ -1,1 +1,8 @@
 @import "../shared/helper";
+
+.home-header-wrapper {
+  header {
+    height: pxtorem(99);
+    background: url('./../images/header.png') center/contain no-repeat;
+  }
+}

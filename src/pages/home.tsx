@@ -3,8 +3,8 @@ import './home.scss';
 
 export const Home = () => {
   return (
-    <div>
-      你好
+    <div className="home-header-wrapper">
+      <header></header>
     </div>
   );
 };
