@@ -22,5 +22,13 @@ body {
 
 #root {
   margin: 0 auto;
-  background-color: lightblue;
+  background-color: lightgreen;
+  display: flex;
+  flex-direction: column;
+}
+
+.App {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }

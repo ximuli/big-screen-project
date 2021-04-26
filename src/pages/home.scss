@@ -1,8 +1,40 @@
 @import "../shared/helper";
 
 .home-header-wrapper {
-  header {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  > header {
     height: pxtorem(99);
     background: url('./../images/header.png') center/contain no-repeat;
+  }
+  > main {
+    flex-grow: 1;
+    display: grid;
+    grid-template:
+      "box1 box2 box4 box5" 755fr
+      "box3 box3 box4 box5" 366fr / 366fr 361fr 811fr 747fr;
+    grid-column-gap: pxtorem(28);
+    grid-row-gap: pxtorem(28);
+    > .section1 {
+      grid-area: box1;
+      background-color: pink;
+    } 
+    > .section2 {
+      grid-area: box2;
+      background-color: lightgray;
+    }
+    > .section3 {
+      grid-area: box3;
+      background-color: lightsalmon;
+    }
+    > .section4 {
+      grid-area: box4;
+      background-color: lightsteelblue;
+    }
+    > .section5 {
+      grid-area: box5;
+      background-color: lightseagreen;
+    }
   }
 }
