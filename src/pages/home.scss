@@ -4,11 +4,13 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  background-color: #010310;
   > header {
     height: pxtorem(99);
     background: url('./../images/header.png') center/contain no-repeat;
   }
   > main {
+    padding-top: pxtorem(30);
     flex-grow: 1;
     display: grid;
     grid-template:
@@ -16,25 +18,45 @@
       "box3 box3 box4 box5" 366fr / 366fr 361fr 811fr 747fr;
     grid-column-gap: pxtorem(28);
     grid-row-gap: pxtorem(28);
+    > section {
+      border: 1px solid #0764bc;
+      border-radius: 4px;
+      position: relative;
+      box-shadow: 0 0 2px 0 #0f3361, inset 0 0 2px 0 #0f3361;
+      background-color: #0c1139;
+      &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 4px;
+        box-shadow:
+          17px 0 0 -16px #0f3361,
+          -17px 0 0 -16px #0f3361,
+          0 17px 0 -16px #0f3361,
+          0 -17px 0 -16px #0f3361,
+          9px 0 0 -8px #0d4483,
+          -9px 0 0 -8px #0d4483,
+          0 9px 0 -8px #0d4483,
+          0 -9px 0 -8px #0d4483;
+      }
+    }
     > .section1 {
       grid-area: box1;
-      background-color: pink;
     } 
     > .section2 {
       grid-area: box2;
-      background-color: lightgray;
     }
     > .section3 {
       grid-area: box3;
-      background-color: lightsalmon;
     }
     > .section4 {
       grid-area: box4;
-      background-color: lightsteelblue;
     }
     > .section5 {
       grid-area: box5;
-      background-color: lightseagreen;
     }
   }
 }

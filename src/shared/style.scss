@@ -18,11 +18,11 @@ code {
 body {
   font-family: $font-hei;
   font-size: 16px;
+  background-color: #00020b;
 }
 
 #root {
   margin: 0 auto;
-  background-color: lightgreen;
   display: flex;
   flex-direction: column;
 }
