@@ -1,4 +1,4 @@
-@function pxtorem($n) {
+@function px($n) {
   // 根据 README 中的 rem 计算公式
   @return $n / 2420 * 100rem;
 }
