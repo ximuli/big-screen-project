@@ -14,7 +14,7 @@
     const UIRATIO = 16 / 9
     console.log('宽高比', clientRatio)
     // 具体规则可以查看 README 中的计算公式
-    const pageWidth = clientRatio > UIRATIO ? clientHeight * UIRATIO : clientWidth
+    window.pageWidth = clientRatio > UIRATIO ? clientHeight * UIRATIO : clientWidth
     const pageHeight = pageWidth / UIRATIO
     const styleStr = `<style>html { font-size: ${pageWidth/100}px; }</style>`
     document.write(styleStr)
