@@ -24,14 +24,30 @@ export const Home = () => {
       xAxis: {
         data: ['兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区'],
         axisLabel: {
-          fontSize: px(12)
-        }
+          fontSize: px(12),
+          formatter(val) {
+            if (val.length > 2) {
+              const arr = val.split('')
+              arr.splice(2, 0, '\n')
+              return arr.join('')
+            } else {
+              return val
+            }
+          }
+        },
+        axisTick: { show: false }
       },
       yAxis: {
         splitLine: { show: false },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: '#083b70'
+          }
+        },
         axisLabel: {
           fontSize: px(12)
-        }
+        },
       },
       series: [{
         name: '销量',
