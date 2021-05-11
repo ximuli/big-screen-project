@@ -9,7 +9,6 @@ export const Chart1 = () => {
   useEffect(() => {
     var myChart = echarts.init(divRef.current);
     var option = createEchartsOptions({
-      ...baseEchartOptions,
       xAxis: {
         data: ['城关区', '七里河区', '西固区', '安宁区', '红谷区', '永登区', '皋兰区', '榆中区', '兰州新区'],
         axisLabel: {

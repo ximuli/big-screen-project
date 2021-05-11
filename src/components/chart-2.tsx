@@ -9,53 +9,68 @@ export const Chart2 = () => {
   useEffect(() => {
     var myChart = echarts.init(divRef.current);
     var option = createEchartsOptions({
-      ...baseEchartOptions,
       xAxis: {
         type: 'value',
         boundaryGap: [0, 0.01],
-        axisLabel: {
-          formatter(val) {
-            if (val.length > 2) {
-              const arr = val.split('')
-              arr.splice(2, 0, '\n')
-              return arr.join('')
-            } else {
-              return val
-            }
-          }
-        },
-        axisTick: { show: false }
+        splitLine: { show: false },
+        axisLabel: { show: false },
       },
       yAxis: {
+        axisTick: { show: false },
         type: 'category',
-        data: ['巴西', '印尼', '美国', '印度', '中国', '世界人口(万)'],
-        splitLine: { show: false },
-        axisLine: {
-          show: true,
-          lineStyle: {
-            color: '#083b70'
+        data: ['城关区公安局', '七里河区公安局', '西固区公安局', '安宁区公安局', '红古区公安局',
+          '永登县公安局', '皋兰县公安局', '榆中县公安局', '兰州新区公安局'],
+        axisLabel: {
+          formatter(val) {
+            return val.replace('公安局', '\n公安局')
           }
-        },
+        }
       },
       series: [
         {
-          name: '破案排名1',
+          name: '2011年',
           type: 'bar',
-          data: [18203, 23489, 29034, 104970, 131744, 630230]
+          data: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+          itemStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                offset: 0,
+                color: '#2034f9'
+              }, {
+                offset: 1,
+                color: '#04a1ff'
+              }]),
+            }
+          }
         },
         {
-          name: '破案排名2',
+          name: '2012年',
           type: 'bar',
-          data: [19325, 23438, 31000, 121594, 134141, 681807]
+          data: [2, 3, 4, 5, 6, 7, 8, 9, 10],
+          itemStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                offset: 0,
+                color: '#b92ae8'
+              }, {
+                offset: 1,
+                color: '#6773e7'
+              }]),
+            }
+          }
         }
       ]
     });
     myChart.setOption(option);
   }, [])
   return (
-    <div className="bordered 管辖统计">
+    <div className="bordered 破获排名">
       <h2>案件破获排名</h2>
       <div ref={divRef} className="chart"></div>
+      <div className="legend">
+        <div className="first"></div>破案排名1
+        <div className="second"></div>破案排名2
+      </div>
     </div>
   )
 }
