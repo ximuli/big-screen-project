@@ -4,6 +4,7 @@ import { Chart1 } from '../components/chart-1';
 import { Chart2 } from '../components/chart-2';
 
 export const Home = () => {
+  const currentYear = new Date().getFullYear()
   return (
     <div className="home-header-wrapper">
       <header></header>
@@ -17,6 +18,7 @@ export const Home = () => {
         <section className="bordered section4"></section>
         <section className="bordered section5"></section>
       </main>
+      <footer> &copy; ximuli 2020-{ currentYear }</footer>
     </div>
   );
 };
