@@ -69,7 +69,7 @@
     > .section5 {
       grid-area: box5;
     }
-    .管辖统计, .破获排名, .发案趋势, .案发时段, .战果 {
+    .管辖统计, .破获排名, .发案趋势, .案发时段, .战果, .籍贯 {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -132,6 +132,23 @@
             width: px(84);
             background-color: #1c2456;
           }
+        }
+      }
+    }
+    .籍贯 {
+      height: px(753);
+      background-color: transparent;
+      > .wrapper {
+        position: relative;
+        width: 100%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        .chart { flex-grow: 1; }
+        .notes {
+          position: absolute;
+          bottom: px(10);
+          right: px(10);
         }
       }
     }

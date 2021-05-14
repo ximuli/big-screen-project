@@ -5,6 +5,7 @@ import { Chart2 } from '../components/chart-2';
 import { Chart3 } from '../components/chart-3';
 import { Chart4 } from '../components/chart-4';
 import { Chart5 } from '../components/chart-5';
+import { Chart6 } from '../components/chart-6';
 
 export const Home = () => {
   const currentYear = new Date().getFullYear()
@@ -23,7 +24,9 @@ export const Home = () => {
         <section className="bordered section3">
           <Chart5 />
         </section>
-        <section className="bordered section4"></section>
+        <section className="section4">
+          <Chart6 />
+        </section>
         <section className="bordered section5"></section>
       </main>
       <footer> &copy; ximuli 2020-{currentYear}</footer>
