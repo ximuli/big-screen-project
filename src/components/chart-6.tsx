@@ -17,7 +17,7 @@ export const Chart6 = () => {
       series: [
         {
           type: 'map',
-          mapType: 'CN', // 自定义扩展图表类型
+          map: 'CN', // 自定义扩展图表类型
           data: [
             // { name: '甘肃省', value: 1 },
             // {name: '四川省', value: 100},
@@ -27,11 +27,11 @@ export const Chart6 = () => {
             areaColor: '#010D3D',
             // color: colors['甘肃省'],
             borderColor: '#01A7F7',
-            emphasis: {
-              label: { color: 'white' },
-              areaColor: '#5470C6',
-            },
-          }
+          },
+          emphasis: {
+            label: { color: 'white' },
+            itemStyle: { areaColor: '#5470C6' }
+          },
         },
       ]
     });
