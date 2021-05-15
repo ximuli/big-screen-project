@@ -41,6 +41,7 @@ export const Chart4 = () => {
             0.15
           ],
           type: 'line',
+          smooth: true,
           symbol: 'circle',
           symbolSize: px(12),
           lineStyle: { width: px(2) },

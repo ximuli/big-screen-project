@@ -16,6 +16,9 @@ export const Chart8 = () => {
       legend: {
         type: 'scroll',
         pageIconSize: px(16),
+        pageButtonGap: px(5),
+        pageButtonItemGap: px(5),
+        pageTextStyle: { color: '#fff' },
         width: '100%',
         itemWidth: px(16),
         itemHeight: px(10),
@@ -39,9 +42,8 @@ export const Chart8 = () => {
           label: {
             show: true,
             position: 'inside',
-            textStyle: {
-              color: '#fff', fontSize: px(20)
-            },
+            color: '#fff',
+            fontSize: px(20),
             formatter(options) {
               return (options.value * 100).toFixed(0) + '%';
             }

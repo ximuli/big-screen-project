@@ -33,9 +33,8 @@ export const Chart7 = () => {
           label: {
             show: true,
             position: 'inside',
-            textStyle: {
-              color: '#fff', fontSize: px(20)
-            },
+            color: '#fff',
+            fontSize: px(20),
             formatter(options) {
               return options.value * 100 + '%';
             }
