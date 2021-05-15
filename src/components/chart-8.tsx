@@ -3,24 +3,30 @@ import * as echarts from 'echarts'
 import { createEchartsOptions } from '../shared/create-echarts-options'
 import { px } from '../shared/px';
 
-export const Chart7 = () => {
+export const Chart8 = () => {
   const divRef = useRef(null)
+  const colors = ['#856BED', '#F46064', '#F38E1C', '#1CDB7C', '#33A4FA'];
   useEffect(() => {
     var myChart = echarts.init(divRef.current);
     var option = createEchartsOptions({
-      color: ['#8D70F8', '#33A4FA'],
-      xAxis: {show: false},
-      yAxis: {show: false},
+      color: colors,
+      xAxis: { show: false },
+      yAxis: { show: false },
+      bottom: 100,
       legend: {
+        type: 'scroll',
+        pageIconSize: px(16),
         width: '100%',
         itemWidth: px(16),
         itemHeight: px(10),
-        itemGap: px(10),
         bottom: '0',
         left: 'center',
         data: [
-          { name: '男', textStyle: { color: '#fff' } },
-          { name: '女', textStyle: { color: '#fff' } }
+          { name: '10-20', textStyle: { color: '#fff' } },
+          { name: '20-30', textStyle: { color: '#fff' } },
+          { name: '30-40', textStyle: { color: '#fff' } },
+          { name: '40-50', textStyle: { color: '#fff' } },
+          { name: '50-60', textStyle: { color: '#fff' } },
         ],
       },
       series: [
@@ -37,13 +43,16 @@ export const Chart7 = () => {
               color: '#fff', fontSize: px(20)
             },
             formatter(options) {
-              return options.value * 100 + '%';
+              return (options.value * 100).toFixed(0) + '%';
             }
           },
           labelLine: { show: false },
           data: [
-            { value: 0.2, name: '女' },
-            { value: 0.8, name: '男' },
+            {value: 0.07, name: '10-20'},
+            {value: 0.10, name: '20-30'},
+            {value: 0.23, name: '30-40'},
+            {value: 0.28, name: '40-50'},
+            {value: 0.32, name: '50-60'},
           ],
         }
       ]
@@ -51,10 +60,10 @@ export const Chart7 = () => {
     myChart.setOption(option);
   }, [])
   return (
-    <div className="年龄段-图1">
+    <div className="年龄段-图2">
       <div className="chart">
         <div ref={divRef} className="main"></div>
-        <div className="text">性别</div>
+        <div className="text">年龄段</div>
       </div>
     </div>
   )

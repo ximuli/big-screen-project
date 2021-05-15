@@ -163,10 +163,10 @@
         width: 100%; padding: px(30);
         flex-grow: 1;
       }
-      &-图1 {
-        display: flex; flex-direction: column;
-        flex-grow: 1;
-        height: 100%;
+      &-图1, &-图2, &-图3 {
+        display: flex; flex-direction: column; flex: 1; height: 100%;
+      }
+      &-图1, &-图2 {
         .chart {
           display: flex; position: relative;
           .main { flex-grow: 1; }

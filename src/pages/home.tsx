@@ -7,6 +7,7 @@ import { Chart4 } from '../components/chart-4';
 import { Chart5 } from '../components/chart-5';
 import { Chart6 } from '../components/chart-6';
 import { Chart7 } from '../components/chart-7';
+import { Chart8 } from '../components/chart-8';
 
 export const Home = () => {
   const currentYear = new Date().getFullYear()
@@ -31,6 +32,7 @@ export const Home = () => {
             <h2>兰州市犯罪人员年龄段分布</h2>
             <div className="charts">
               <Chart7 />
+              <Chart8 />
             </div>
           </div>
         </section>
