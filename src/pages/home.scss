@@ -65,14 +65,16 @@
     }
     > .section4 {
       grid-area: box4;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      display: flex; flex-direction: column; justify-content: space-between;
     }
     > .section5 {
       grid-area: box5;
+      display: flex; flex-direction: column; justify-content: space-between;
+      > .row1 { height: px(317); }
+      > .row2 { height: px(317); }
+      > .row3 { height: px(455); }
     }
-    .管辖统计, .破获排名, .发案趋势, .案发时段, .战果, .籍贯, .年龄段 {
+    .管辖统计, .破获排名, .发案趋势, .案发时段, .战果, .籍贯, .年龄段, .案发类型, .案发街道, .作案手段 {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -87,6 +89,11 @@
         line-height: px(24);
         padding: px(10) px(28);
         text-shadow: 0 0 px(3) white;
+      }
+      .charts {
+        display: flex; align-items: center; justify-content: space-between;
+        width: 100%;
+        flex-grow: 1;
       }
       .chart {
         flex-grow: 1;
@@ -159,9 +166,7 @@
       display: flex; flex-direction: column;
       height: px(363);
       .charts {
-        display: flex; align-items: center; justify-content: space-between;
-        width: 100%; padding: px(30);
-        flex-grow: 1;
+        padding: px(30);
       }
       &-图1, &-图2, &-图3 {
         display: flex; flex-direction: column; flex: 1; height: 100%;

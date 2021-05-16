@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import './home.scss';
 import { Chart1 } from '../components/chart-1';
 import { Chart2 } from '../components/chart-2';
@@ -39,6 +39,20 @@ export const Home = () => {
           </div>
         </section>
         <section className="section5">
+          <div className="bordered row1 案发类型">
+            <h2>兰州市案发类型统计</h2>
+            <div className="charts">
+
+            </div>
+          </div>
+          <div className="bordered row2 案发街道">
+            <h2>兰州市案发街道统计</h2>
+            <div className="charts"></div>
+          </div>
+          <div className="bordered row3 作案手段">
+            <h2>作案手段分析</h2>
+            <div className="charts"></div>
+          </div>
         </section>
       </main>
       <footer> &copy; ximuli 2020-{currentYear}</footer>
