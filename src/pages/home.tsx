@@ -11,6 +11,9 @@ import { Chart8 } from '../components/chart-8';
 import { Chart9 } from '../components/chart-9';
 import { Chart10 } from '../components/chart-10';
 import { Chart11 } from '../components/chart-11';
+import { Chart12 } from '../components/chart-12';
+import { Chart13 } from '../components/chart-13';
+import { Chart14 } from '../components/chart-14';
 
 export const Home = () => {
   const currentYear = new Date().getFullYear()
@@ -50,11 +53,14 @@ export const Home = () => {
           </div>
           <div className="bordered row2 案发街道">
             <h2>兰州市案发街道统计</h2>
-            <div className="charts"></div>
+            <div className="charts">
+              <Chart12 />
+              <Chart13 />
+            </div>
           </div>
           <div className="bordered row3 作案手段">
             <h2>作案手段分析</h2>
-            <div className="charts"></div>
+            <Chart14 />
           </div>
         </section>
       </main>
