@@ -27,12 +27,6 @@ export const Chart12 = () => {
         orient: 'vertical',
         left: 'left',
         top: 'center',
-        // type: 'scroll',
-        // pageIconSize: px(16),
-        // pageButtonGap: px(5),
-        // pageButtonItemGap: px(5),
-        // pageTextStyle: { color: '#fff' },
-        // width: '100%',
         textStyle: {color: 'white'},
         itemWidth: px(16),
         itemHeight: px(10),
@@ -40,14 +34,6 @@ export const Chart12 = () => {
           const value = data.find(i => i.name === name)?.value * 100 + '%';
           return name + ' ' + value;
         }
-        // bottom: '0',
-        // left: 'center',
-        // data: [
-        //   { name: '刑事', textStyle: { color: '#fff' } },
-        //   { name: '民事', textStyle: { color: '#fff' } },
-        //   { name: '经济', textStyle: { color: '#fff' } },
-        //   { name: '其他', textStyle: { color: '#fff' } },
-        // ],
       },
       series: [
         {
