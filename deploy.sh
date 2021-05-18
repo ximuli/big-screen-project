@@ -4,7 +4,7 @@
 set -e
 
 # 构建
-npm run build
+yarn build
 
 # 进入输出产物文件夹
 cd dist
