@@ -35,7 +35,7 @@ export const Chart6 = () => {
     myChart.setOption(option);
   }, [])
   return (
-    <div className="bordered 籍贯">
+    <div className="bordered2 籍贯">
       <h2>全兰州市犯罪人员籍贯分布地</h2>
       <div className="wrapper">
         <div ref={divRef} className="chart"></div>
