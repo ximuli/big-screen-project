@@ -5,20 +5,23 @@ import { createEchartsOptions } from '../shared/create-echarts-options'
 
 export const Chart12 = () => {
   const divRef = useRef(null)
+  const myChart = useRef(null)
   const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
-  const data = [
-    {value: 0.08, name: '东岗路'},
-    {value: 0.06, name: '段家滩'},
-    {value: 0.11, name: '雁北'},
-    {value: 0.09, name: '五泉山'},
-    {value: 0.12, name: '中山路'},
-    {value: 0.06, name: '庆阳路'},
-    {value: 0.08, name: '武都路'},
-    {value: 0.08, name: '酒泉路'},
-    {value: 0.08, name: '天水路'},
-  ];
-  useEffect(() => {
-    var myChart = echarts.init(divRef.current);
+  const generateData = () => {
+    const randomNumber = () => parseFloat((Math.random() / 10).toFixed(2))
+    return [
+      {value: randomNumber(), name: '东岗路'},
+      {value: randomNumber(), name: '段家滩'},
+      {value: randomNumber(), name: '雁北'},
+      {value: randomNumber(), name: '五泉山'},
+      {value: randomNumber(), name: '中山路'},
+      {value: randomNumber(), name: '庆阳路'},
+      {value: randomNumber(), name: '武都路'},
+      {value: randomNumber(), name: '酒泉路'},
+      {value: randomNumber(), name: '天水路'},
+    ]
+  }
+  const initData = (data) => {
     var option = createEchartsOptions({
       color: colors,
       xAxis: {show: false},
@@ -31,7 +34,7 @@ export const Chart12 = () => {
         itemWidth: px(16),
         itemHeight: px(10),
         formatter(name) {
-          const value = data.find(i => i.name === name)?.value * 100 + '%';
+          const value = (data.find(i => i.name === name)?.value * 100).toFixed(0) + '%';
           return name + ' ' + value;
         }
       },
@@ -53,7 +56,14 @@ export const Chart12 = () => {
         }
       ]
     });
-    myChart.setOption(option);
+    myChart.current.setOption(option);
+  }
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    initData(generateData())
+    setInterval(() => {
+      initData(generateData())
+    }, 2000)
   }, [])
   return (
     <div ref={divRef} className="chart"></div>

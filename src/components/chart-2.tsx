@@ -73,7 +73,6 @@ export const Chart2 = () => {
     myChart.current = echarts.init(divRef.current)
     initData(generateData())
     window.setInterval(() => {
-      console.log('hello')
       initData(generateData())
     }, 3000)
   }, [])
