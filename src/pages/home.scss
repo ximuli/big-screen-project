@@ -222,7 +222,7 @@
               left: 50%; top: 50%;
               transform: translate(-50%, -50%);
               // border: 1px solid #0764bc;
-              border: 2px solid rgba($color: #0d4483, $alpha: 0.5);
+              border: px(2) solid rgba($color: #0d4483, $alpha: 0.5);
               border-radius: 50%;
               &::before {
                 position: absolute;
@@ -232,27 +232,27 @@
                 left: 50%; top: 50%;
                 transform: translate(-50%, -50%);
                 // border: 1px solid #0764bc;
-                border: 1px solid rgba($color: #0d4483, $alpha: 0.6);
+                border: px(1) solid rgba($color: #0d4483, $alpha: 0.6);
                 border-radius: 50%;
               }
               &::after {
                 position: absolute;
                 content: '';
-                width: px(2);
+                width: px(1);
                 height: px(30);
                 background: #0764bc;
                 top: 0;
                 // left: 0;
                 // transform: translateY(50%);
-                box-shadow: 0 0 5px 1px #0094e4,
-                -3px -10px 5px 1px #0094e4,
-                -7px -15px 10px 1px #0094e4,
-                -3px -3px 10px 1px #0094e4,
-                -7px -7px 20px 1px #0094e4,
-                -11px -11px 30px 1px #0094e4,
-                -11px -11px 40px 1px #0094e4,
-                -11px -11px 30px 1px #0094e4,
-                -11px -11px 30px 1px #0094e4;
+                box-shadow: 0 0 px(5) px(1) #0094e4,
+                px(-3) px(-10) px(5) px(1) #0094e4,
+                px(-7) px(-15) px(10) px(1) #0094e4,
+                px(-3) px(-3) px(10) px(1) #0094e4,
+                px(-7) px(-7) px(20) px(1) #0094e4,
+                px(-11) px(-11) px(30) px(1) #0094e4,
+                px(-11) px(-11) px(40) px(1) #0094e4,
+                px(-11) px(-11) px(30) px(1) #0094e4,
+                px(-11) px(-11) px(30) px(1) #0094e4;
               }
             }
           }
