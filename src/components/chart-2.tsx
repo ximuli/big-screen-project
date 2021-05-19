@@ -4,9 +4,23 @@ import { createEchartsOptions } from '../shared/create-echarts-options'
 
 export const Chart2 = () => {
   const divRef = useRef(null)
-  useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    var option = createEchartsOptions({
+  const myChart = useRef(null)
+  const generateData = () => {
+    const randomNumber = () => Math.floor(Math.random() * 10)
+    return [
+      { name: '城关区公安局', 2011: randomNumber(), 2012: randomNumber() },
+      { name: '七里河区公安局', 2011: randomNumber(), 2012: randomNumber() },
+      { name: '西固区公安局', 2011: randomNumber(), 2012: randomNumber() },
+      { name: '安宁区公安局', 2011: randomNumber(), 2012: randomNumber() },
+      { name: '红古区公安局', 2011: randomNumber(), 2012: randomNumber() },
+      { name: '永登县公安局', 2011: randomNumber(), 2012: randomNumber() },
+      { name: '皋兰县公安局', 2011: randomNumber(), 2012: randomNumber() },
+      { name: '榆中县公安局', 2011: randomNumber(), 2012: randomNumber() },
+      { name: '兰州新区公安局', 2011: randomNumber(), 2012: randomNumber() },
+    ]
+  }
+  const initData = (data) => {
+    myChart.current.setOption(createEchartsOptions({
       xAxis: {
         type: 'value',
         boundaryGap: [0, 0.01],
@@ -16,8 +30,7 @@ export const Chart2 = () => {
       yAxis: {
         axisTick: { show: false },
         type: 'category',
-        data: ['城关区公安局', '七里河区公安局', '西固区公安局', '安宁区公安局', '红古区公安局',
-          '永登县公安局', '皋兰县公安局', '榆中县公安局', '兰州新区公安局'],
+        data: data.map(i => i.name),
         axisLabel: {
           formatter(val) {
             return val.replace('公安局', '\n公安局')
@@ -28,7 +41,7 @@ export const Chart2 = () => {
         {
           name: '2011年',
           type: 'bar',
-          data: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+          data: data.map(i => i['2011']),
           itemStyle: {
             color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
               offset: 0,
@@ -42,7 +55,7 @@ export const Chart2 = () => {
         {
           name: '2012年',
           type: 'bar',
-          data: [2, 3, 4, 5, 6, 7, 8, 9, 10],
+          data: data.map(i => i['2012']),
           itemStyle: {
             color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
               offset: 0,
@@ -54,8 +67,15 @@ export const Chart2 = () => {
           }
         }
       ]
-    });
-    myChart.setOption(option);
+    }));
+  }
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current)
+    initData(generateData())
+    window.setInterval(() => {
+      console.log('hello')
+      initData(generateData())
+    }, 3000)
   }, [])
   return (
     <div className="bordered 破获排名">
@@ -67,4 +87,8 @@ export const Chart2 = () => {
       </div>
     </div>
   )
+}
+
+function setInterval(arg0: () => void) {
+  throw new Error('Function not implemented.');
 }
