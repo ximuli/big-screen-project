@@ -1,10 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react'
 
 export const Chart5 = () => {
-  const divRef = useRef(null)
-  useEffect(() => {
-
-  }, [])
   return (
     <div className="战果">
       <h2>往年战果数对比</h2>
