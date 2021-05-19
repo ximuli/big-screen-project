@@ -19,7 +19,9 @@ export const Home = () => {
   const currentYear = new Date().getFullYear()
   return (
     <div className="home-header-wrapper">
-      <header></header>
+      <header>
+        <div className="title">国家级公安合成作战平台</div>
+      </header>
       <main>
         <section className="section1">
           <Chart1 />
@@ -64,7 +66,10 @@ export const Home = () => {
           </div>
         </section>
       </main>
-      <footer> &copy; ximuli 2020-{currentYear}</footer>
+      <footer> &copy;
+        <a className="link" target="_blank" href="https://github.com/ximuli">ximuli</a>
+        2020-{currentYear}
+      </footer>
     </div>
   );
 };

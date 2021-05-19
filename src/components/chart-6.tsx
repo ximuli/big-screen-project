@@ -17,7 +17,7 @@ export const Chart6 = () => {
           type: 'map',
           map: 'CN', // 自定义扩展图表类型
           data: [
-            // { name: '甘肃省', value: 1 },
+            // { name: '上海市', value: 1 },
             // {name: '四川省', value: 100},
           ],
           // label: { show: false },
@@ -35,8 +35,8 @@ export const Chart6 = () => {
     myChart.setOption(option);
   }, [])
   return (
-    <div className="bordered2 籍贯">
-      <h2>全兰州市犯罪人员籍贯分布地</h2>
+    <div className="bordered 籍贯">
+      {/* <h2>全兰州市犯罪人员籍贯分布地</h2> */}
       <div className="wrapper">
         <div ref={divRef} className="chart"></div>
         <div className="monitor-wrapper">
